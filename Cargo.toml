@@ -10,6 +10,11 @@ license = "MIT OR Apache-2.0"
 version = "0.8.0"
 rust-version = "1.76.0"
 
+[patch.crates-io]
+bevy_app = { git = "https://github.com/jeanmertz/bevy", branch = "jean/debug-ui-gizmo-size" }
+bevy_ecs = { git = "https://github.com/jeanmertz/bevy", branch = "jean/debug-ui-gizmo-size" }
+bevy_reflect = { git = "https://github.com/jeanmertz/bevy", branch = "jean/debug-ui-gizmo-size" }
+
 [workspace.dependencies]
 bevy_app = { version = "0.15.0" }
 bevy_ecs = { version = "0.15.0" }
@@ -66,7 +71,10 @@ serde_derive = { workspace = true, optional = true }
 bevy_prng = { path = "bevy_prng", version = "=0.8" }
 
 [dev-dependencies]
-bevy_prng = { path = "bevy_prng", version = "0.8", features = ["rand_chacha", "wyrand"] }
+bevy_prng = { path = "bevy_prng", version = "0.8", features = [
+  "rand_chacha",
+  "wyrand",
+] }
 rand = "0.8"
 ron = { version = "0.8.0", features = ["integer128"] }
 
